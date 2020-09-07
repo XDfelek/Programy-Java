@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Tests" tests="3" skipped="0" failures="3" errors="0" timestamp="2020-09-06T15:03:51" hostname="DESKTOP-UI5KERO" time="0.009">
+<testsuite name="Tests" tests="3" skipped="0" failures="3" errors="0" timestamp="2020-09-07T15:51:32" hostname="DESKTOP-UI5KERO" time="0.008">
   <properties/>
-  <testcase name="testSolution" classname="Tests" time="0.007">
-    <failure message="org.junit.ComparisonFailure: Dla tekstu Ala lubi koty, ale nie jest przez Koty lubiana., program powinien wypisaÄ‡ w konsoli: &#10;ala - 1&#10;ale - 1&#10;jest - 1&#10;koty - 2&#10;lubi - 1&#10;lubiana - 1&#10;nie - 1&#10;przez - 1. expected:&lt;[ala - 1&#10;ale - 1&#10;jest - 1&#10;koty - 2&#10;lubi - 1&#10;lubiana - 1&#10;nie - 1&#10;przez - 1]&gt; but was:&lt;[]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: Dla tekstu Ala lubi koty, ale nie jest przez Koty lubiana., program powinien wypisaÄ‡ w konsoli: 
+  <testcase name="testSolution" classname="Tests" time="0.006">
+    <failure message="org.junit.ComparisonFailure: Dla tekstu Ala lubi koty, ale nie jest przez Koty lubiana., program powinien wypisaÄ‡ w konsoli: &#10;ala - 1&#10;ale - 1&#10;jest - 1&#10;koty - 2&#10;lubi - 1&#10;lubiana - 1&#10;nie - 1&#10;przez - 1. expected:&lt;...- 1&#10;jest - 1&#10;koty - [2&#10;lubi - 1&#10;lubiana] - 1&#10;nie - 1&#10;przez -...&gt; but was:&lt;...- 1&#10;jest - 1&#10;koty - [1&#10;koty, - 1&#10;lubi - 1&#10;lubiana.] - 1&#10;nie - 1&#10;przez -...&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: Dla tekstu Ala lubi koty, ale nie jest przez Koty lubiana., program powinien wypisaÄ‡ w konsoli: 
 ala - 1
 ale - 1
 jest - 1
@@ -10,14 +10,20 @@ koty - 2
 lubi - 1
 lubiana - 1
 nie - 1
-przez - 1. expected:&lt;[ala - 1
-ale - 1
+przez - 1. expected:&lt;...- 1
 jest - 1
-koty - 2
+koty - [2
 lubi - 1
-lubiana - 1
+lubiana] - 1
 nie - 1
-przez - 1]&gt; but was:&lt;[]&gt;
+przez -...&gt; but was:&lt;...- 1
+jest - 1
+koty - [1
+koty, - 1
+lubi - 1
+lubiana.] - 1
+nie - 1
+przez -...&gt;
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at Tests.testSolution(Tests.java:49)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -71,8 +77,8 @@ przez - 1]&gt; but was:&lt;[]&gt;
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </failure>
   </testcase>
-  <testcase name="testSolution2" classname="Tests" time="0.001">
-    <failure message="org.junit.ComparisonFailure: Dla tekstu Ala! lubi? koty, ale. nie jest przez Koty lubiana., program powinien wypisaÄ‡ w konsoli: &#10;ala - 1&#10;ale - 1&#10;jest - 1&#10;koty - 2&#10;lubi - 1&#10;lubiana - 1&#10;nie - 1&#10;przez - 1. expected:&lt;[ala - 1&#10;ale - 1&#10;jest - 1&#10;koty - 2&#10;lubi - 1&#10;lubiana - 1&#10;nie - 1&#10;przez - 1]&gt; but was:&lt;[]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: Dla tekstu Ala! lubi? koty, ale. nie jest przez Koty lubiana., program powinien wypisaÄ‡ w konsoli: 
+  <testcase name="testSolution2" classname="Tests" time="0.002">
+    <failure message="org.junit.ComparisonFailure: Dla tekstu Ala! lubi? koty, ale. nie jest przez Koty lubiana., program powinien wypisaÄ‡ w konsoli: &#10;ala - 1&#10;ale - 1&#10;jest - 1&#10;koty - 2&#10;lubi - 1&#10;lubiana - 1&#10;nie - 1&#10;przez - 1. expected:&lt;ala[ - 1&#10;ale - 1&#10;jest - 1&#10;koty - 2&#10;lubi - 1&#10;lubiana] - 1&#10;nie - 1&#10;przez -...&gt; but was:&lt;ala[! - 1&#10;ale. - 1&#10;jest - 1&#10;koty - 1&#10;koty, - 1&#10;lubi? - 1&#10;lubiana.] - 1&#10;nie - 1&#10;przez -...&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: Dla tekstu Ala! lubi? koty, ale. nie jest przez Koty lubiana., program powinien wypisaÄ‡ w konsoli: 
 ala - 1
 ale - 1
 jest - 1
@@ -80,14 +86,22 @@ koty - 2
 lubi - 1
 lubiana - 1
 nie - 1
-przez - 1. expected:&lt;[ala - 1
+przez - 1. expected:&lt;ala[ - 1
 ale - 1
 jest - 1
 koty - 2
 lubi - 1
-lubiana - 1
+lubiana] - 1
 nie - 1
-przez - 1]&gt; but was:&lt;[]&gt;
+przez -...&gt; but was:&lt;ala[! - 1
+ale. - 1
+jest - 1
+koty - 1
+koty, - 1
+lubi? - 1
+lubiana.] - 1
+nie - 1
+przez -...&gt;
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at Tests.testSolution2(Tests.java:68)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -141,11 +155,13 @@ przez - 1]&gt; but was:&lt;[]&gt;
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </failure>
   </testcase>
-  <testcase name="testSolution3" classname="Tests" time="0.001">
-    <failure message="org.junit.ComparisonFailure: Dla tekstu World. Hello, World!, program powinien wypisaÄ‡ w konsoli: &#10;hello - 1&#10;world - 2. expected:&lt;[hello - 1&#10;world - 2]&gt; but was:&lt;[]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: Dla tekstu World. Hello, World!, program powinien wypisaÄ‡ w konsoli: 
+  <testcase name="testSolution3" classname="Tests" time="0.0">
+    <failure message="org.junit.ComparisonFailure: Dla tekstu World. Hello, World!, program powinien wypisaÄ‡ w konsoli: &#10;hello - 1&#10;world - 2. expected:&lt;hello[ - 1&#10;world - 2]&gt; but was:&lt;hello[, - 1&#10;world! - 1&#10;world. - 1]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: Dla tekstu World. Hello, World!, program powinien wypisaÄ‡ w konsoli: 
 hello - 1
-world - 2. expected:&lt;[hello - 1
-world - 2]&gt; but was:&lt;[]&gt;
+world - 2. expected:&lt;hello[ - 1
+world - 2]&gt; but was:&lt;hello[, - 1
+world! - 1
+world. - 1]&gt;
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at Tests.testSolution3(Tests.java:81)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

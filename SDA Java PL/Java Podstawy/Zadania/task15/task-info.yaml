@@ -3,8 +3,8 @@ files:
 - name: src/Task.java
   visible: true
   placeholders:
-  - offset: 199
-    length: 31
+  - offset: 224
+    length: 695
     placeholder_text: // Tu zaimplementuj rozwiązanie
     initial_state:
       length: 31
@@ -27,7 +27,7 @@ files:
               }
 
               wordsOccurrences.forEach((key, val) -> System.out.println(key + " - " + val));
-    selected: false
+    selected: true
     status: Failed
   text: |-
     import java.util.Map;
@@ -135,7 +135,7 @@ feedback:
   message: "Dla tekstu Ala lubi koty, ale nie jest przez Koty lubiana., program powinien\
     \ wypisaÄ‡ w konsoli: \nala - 1\nale - 1\njest - 1\nkoty - 2\nlubi - 1\nlubiana\
     \ - 1\nnie - 1\nprzez - 1."
-  time: Sun, 06 Sep 2020 15:03:51 UTC
+  time: Mon, 07 Sep 2020 15:51:32 UTC
   expected: |-
     ala - 1
     ale - 1
@@ -143,6 +143,16 @@ feedback:
     koty - 2
     lubi - 1
     lubiana - 1
+    nie - 1
+    przez - 1
+  actual: |-
+    ala - 1
+    ale - 1
+    jest - 1
+    koty - 1
+    koty, - 1
+    lubi - 1
+    lubiana. - 1
     nie - 1
     przez - 1
 record: -1
