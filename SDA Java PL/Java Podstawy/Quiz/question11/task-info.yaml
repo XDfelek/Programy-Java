@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: get
+  is_correct: false
+- text: break
+  is_correct: false
+- text: void
+  is_correct: false
+- text: return
+  is_correct: true
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    public class Main {
+        public static void main(String[] args) {
+
+        }
+    }
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 04 Sep 2020 09:58:37 UTC
+record: -1
+selected_options:
+- 3

@@ -1,0 +1,1 @@
+Jak tworzy się obiekt o nazwie myObj typu MyClass?

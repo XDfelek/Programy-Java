@@ -1,0 +1,125 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 143
+    length: 12
+    placeholder_text: // your code
+    initial_state:
+      length: 12
+      offset: 143
+    initialized_from_dependency: false
+    possible_answer: |2-
+              int ileKgKapustyKupic = scanner.nextInt();
+
+              // obliczamy, ile dużych słoików potrzebujemy - jeżeli tylko mamy możliwość, wolimy kupować duże słoiki.
+              // Dzielenie / w Javie na typach całkowitych "obcina" cześc ułamkową
+              // Dla przykładu:
+              // 10 / 7 = 1
+              // 5 / 7 = 0
+              // 21 / 7 = 3
+              int liczbaSloikow7kg = ileKgKapustyKupic / 7;
+
+              // Żeby dowiedzieć się, ile kapusty jeszcze nam brakuje - potrzebujemy reszty z dzielenia powyżej
+              // Możemy ją obliczyć, używając operatora modulo (%):
+              // Dla przykładu:
+              // 10 % 7 = 3
+              // 5 % 7 = 5
+              // 21 % 7 = 0
+
+              int liczbaSloikow1kg = ileKgKapustyKupic % 7;
+
+              // sprawdzamy, czy łączna liczba słoików jest nie większa niż 6.
+              // Wyświetlamy "true", jeżeli tak i "false" w przeciwnym wypadku
+              System.out.println(liczbaSloikow1kg + liczbaSloikow7kg <= 6);
+    selected: false
+    status: Unchecked
+  text: |-
+    import java.util.Scanner;
+
+    public class Task {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+    // your code
+        }
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |-
+    import org.junit.Test;
+
+    public class Tests extends BaseTest {
+
+        @Test
+        public void testSolution() {
+            runTest("6", "true");
+        }
+
+        @Test
+        public void testSolution2() {
+            runTest("7", "true");
+        }
+
+        @Test
+        public void testSolution3() {
+            runTest("13", "false");
+        }
+
+        @Test
+        public void testSolution4() {
+            runTest("14", "true");
+        }
+
+        @Test
+        public void testSolution5() {
+            runTest("20", "false");
+        }
+
+        @Test
+        public void testSolution6() {
+            runTest("43", "false");
+        }
+    }
+  learner_created: false
+- name: test/BaseTest.java
+  visible: false
+  text: |
+    import org.junit.After;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.PrintStream;
+    import java.util.function.Consumer;
+
+    import static org.junit.Assert.assertEquals;
+
+    public class BaseTest {
+
+        @After
+        public void restoreStreams() {
+            System.setOut(System.out);
+            System.setIn(System.in);
+        }
+
+        protected void runTest(String input, String expected) {
+            String actual = run(Task::main, input);
+
+            assertEquals("Zly wynik dla ponizszych danych: \n" + input + "\n", expected, actual);
+        }
+
+        private String run(Consumer<String[]> method, String input) {
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+            ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(outContent));
+
+            method.accept(new String[]{});
+            return outContent.toString().trim();
+        }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

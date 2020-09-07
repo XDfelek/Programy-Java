@@ -1,0 +1,104 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 143
+    length: 12
+    placeholder_text: // your code
+    initial_state:
+      length: 12
+      offset: 143
+    initialized_from_dependency: false
+    possible_answer: |2-
+              int a = scanner.nextInt();
+              int b = scanner.nextInt();
+
+              while (b != 0) {
+                  int c = a % b;
+                  a = b;
+                  b = c;
+              }
+
+              System.out.println(a);
+    selected: false
+    status: Unchecked
+  text: |-
+    import java.util.Scanner;
+
+    public class Task {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+    // your code
+        }
+    }
+  learner_created: false
+- name: test/BaseTest.java
+  visible: false
+  text: |
+    import org.junit.After;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.PrintStream;
+    import java.util.function.Consumer;
+
+    import static org.junit.Assert.assertEquals;
+
+    public class BaseTest {
+
+        @After
+        public void restoreStreams() {
+            System.setOut(System.out);
+            System.setIn(System.in);
+        }
+
+        protected void runTest(String input, String expected) {
+            String actual = run(Task::main, input);
+
+            assertEquals("Zly wynik dla ponizszych danych: \n" + input + "\n", expected, actual);
+        }
+
+        private String run(Consumer<String[]> method, String input) {
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+            ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(outContent));
+
+            method.accept(new String[]{});
+            return outContent.toString().trim();
+        }
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |-
+    import org.junit.Test;
+
+    public class Tests extends BaseTest {
+
+        @Test
+        public void testSolution() {
+            runTest("21\n24", "3");
+        }
+
+        @Test
+        public void testSolution2() {
+            runTest("16\n25", "1");
+        }
+
+        @Test
+        public void testSolution3() {
+            runTest("1\n100", "1");
+        }
+
+        @Test
+        public void testSolution4() {
+            runTest("17\n17", "17");
+        }
+
+    }
+  learner_created: false
+status: Unchecked
+record: -1

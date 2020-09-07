@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: print("Hello World");
+  is_correct: false
+- text: System.out.println("Hello World");
+  is_correct: true
+- text: Console.WriteLine("Hello World");
+  is_correct: false
+- text: echo("Hello World");
+  is_correct: false
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    public class Main {
+        public static void main(String[] args) {
+
+        }
+    }
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 24 Aug 2020 13:49:33 UTC
+record: -1
+selected_options:
+- 1

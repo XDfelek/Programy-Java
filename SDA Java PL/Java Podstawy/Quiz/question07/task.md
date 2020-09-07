@@ -1,0 +1,1 @@
+Wartość zmiennej typu `String` może być alternatywnie do cudzysłowów opatrzona apostrofami.

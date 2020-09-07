@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="74a5bb2a-d38a-4630-adb3-af4433c317fe" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1fgfPMeoKeTFTxBrvGsyNoOvPfU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Pierwsze zajęcia/first-project" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RunManager" selected="Application.pd7">
+    <configuration name="pd6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pd6" />
+      <module name="first-project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pd7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pd7" />
+      <module name="first-project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pd8910hasze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pd8910hasze" />
+      <module name="first-project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pd9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pd9" />
+      <module name="first-project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pd9b" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pd9b" />
+      <module name="first-project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.pd7" />
+        <item itemvalue="Application.pd6" />
+        <item itemvalue="Application.pd9b" />
+        <item itemvalue="Application.pd9" />
+        <item itemvalue="Application.pd8910hasze" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="74a5bb2a-d38a-4630-adb3-af4433c317fe" name="Default Changelist" comment="" />
+      <created>1596644630199</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596644630199</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="774" y="430" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1596662896599">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="774" y="430" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/62.0.1858.1080/1920.-243.900.1410/-1858.0.1474.864@62.0.1858.1080" timestamp="1596662896599" />
+    <state x="771" y="295" key="FileChooserDialogImpl" timestamp="1597852877164">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="771" y="295" key="FileChooserDialogImpl/62.0.1858.1080/1920.-243.900.1410/-1858.0.1474.864@62.0.1858.1080" timestamp="1597852877164" />
+    <state width="1815" height="295" key="GridCell.Tab.0.bottom" timestamp="1596823333199">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="295" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.-243.900.1410/-1858.0.1474.864@62.0.1858.1080" timestamp="1596823333199" />
+    <state width="1815" height="295" key="GridCell.Tab.0.center" timestamp="1596823333199">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="295" key="GridCell.Tab.0.center/62.0.1858.1080/1920.-243.900.1410/-1858.0.1474.864@62.0.1858.1080" timestamp="1596823333199" />
+    <state width="1815" height="295" key="GridCell.Tab.0.left" timestamp="1596823333199">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="295" key="GridCell.Tab.0.left/62.0.1858.1080/1920.-243.900.1410/-1858.0.1474.864@62.0.1858.1080" timestamp="1596823333199" />
+    <state width="1815" height="295" key="GridCell.Tab.0.right" timestamp="1596823333199">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="295" key="GridCell.Tab.0.right/62.0.1858.1080/1920.-243.900.1410/-1858.0.1474.864@62.0.1858.1080" timestamp="1596823333199" />
+    <state x="492" y="185" key="SettingsEditor" timestamp="1596645176165">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="492" y="185" key="SettingsEditor/62.0.1858.1080/1920.-243.900.1410/-1858.0.1474.864@62.0.1858.1080" timestamp="1596645176165" />
+    <state x="373" y="160" key="new project wizard" timestamp="1597851850433">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="373" y="160" key="new project wizard/62.0.1858.1080/1920.-243.900.1410/-1858.0.1474.864@62.0.1858.1080" timestamp="1597851850433" />
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1596657556280">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup/62.0.1858.1080/1920.-243.900.1410/-1858.0.1474.864@62.0.1858.1080" timestamp="1596657556280" />
+  </component>
+</project>

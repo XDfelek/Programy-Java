@@ -1,0 +1,34 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: X5
+  is_correct: true
+- text: 5
+  is_correct: false
+- text: Błąd kompilacji.
+  is_correct: false
+- text: X2
+  is_correct: false
+- text: 2
+  is_correct: false
+- text: Błąd po uruchomieniu.
+  is_correct: false
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    public class Main {
+        public static void main(String[] args) {
+
+        }
+    }
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 04 Sep 2020 10:12:51 UTC
+record: -1
+selected_options:
+- 0

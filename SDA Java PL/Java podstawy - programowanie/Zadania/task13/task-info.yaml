@@ -1,0 +1,124 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 151
+    length: 12
+    placeholder_text: // your code
+    initial_state:
+      length: 12
+      offset: 151
+    initialized_from_dependency: false
+    possible_answer: |-
+      int tab[][] = new int[2][5];
+
+              // odczytujemy liczby wpisane przez użytkownika do tablicy dwuwymiarowej
+              for (int i = 0; i < 2; i++) {
+                  for (int j = 0; j < 5; j++) {
+                      tab[i][j] = scanner.nextInt();
+                  }
+              }
+
+              // elementy w tablicy tab[0] to pierwsza piątka
+              // elementy w tablicy tab[1] to druga piątka
+              for (int i = 0; i < 5; i++) {
+                  int poszukiwanaLiczba = tab[0][i];
+                  // w pętli przeszukujemy całą "drugą piątkę"
+                  for (int j = 0; j < 5; j++) {
+                      if (tab[1][j] == poszukiwanaLiczba) {
+                          System.out.println(poszukiwanaLiczba);
+                          break; // skoro trafiliśmy, nie ma potrzeby dalej sprawdzać
+                      }
+                  }
+              }
+    selected: false
+    status: Unchecked
+  text: |-
+    import java.util.Scanner;
+
+    public class Task {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            // your code
+        }
+    }
+  learner_created: false
+- name: test/BaseTest.java
+  visible: false
+  text: |
+    import org.junit.After;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.PrintStream;
+    import java.util.function.Consumer;
+
+    import static org.junit.Assert.assertEquals;
+
+    public class BaseTest {
+
+        @After
+        public void restoreStreams() {
+            System.setOut(System.out);
+            System.setIn(System.in);
+        }
+
+        protected void runTest(String input, String expected) {
+            String actual = run(Task::main, input);
+
+            assertEquals("Zly wynik dla ponizszych danych: \n" + input + "\n", expected, actual);
+        }
+
+        private String run(Consumer<String[]> method, String input) {
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+            ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(outContent));
+
+            method.accept(new String[]{});
+            return outContent.toString().trim().replaceAll("\r\n", "\n");
+        }
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |-
+    import org.junit.Test;
+
+    import java.util.Arrays;
+    import java.util.stream.Collectors;
+
+    public class Tests extends BaseTest {
+
+        private String printAsString(int... ints) {
+            return Arrays.stream(ints)
+                    .mapToObj(String::valueOf)
+                    .collect(Collectors.joining("\n"));
+        }
+
+        @Test
+        public void testSolution() {
+            runTest(printAsString(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), "");
+        }
+
+        @Test
+        public void testSolution2() {
+            runTest(printAsString(1, 2, 3, 4, 5, 1, 2, 3, 4, 5), "1\n2\n3\n4\n5");
+        }
+
+        @Test
+        public void testSolution3() {
+            runTest(printAsString(1, 2, 3, 4, 5, 5, 4, 3, 2, 1), "1\n2\n3\n4\n5");
+        }
+
+        @Test
+        public void testSolution4() {
+            runTest(printAsString(1, 2, 3, 4, 5, 8, 11, 2, 5, 9), "2\n5");
+        }
+
+    }
+  learner_created: false
+status: Unchecked
+record: -1

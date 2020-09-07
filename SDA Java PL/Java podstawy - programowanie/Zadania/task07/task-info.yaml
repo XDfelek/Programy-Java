@@ -1,0 +1,145 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 151
+    length: 12
+    placeholder_text: // your code
+    initial_state:
+      length: 12
+      offset: 151
+    initialized_from_dependency: false
+    possible_answer: |-
+      int x = scanner.nextInt();
+              int y = scanner.nextInt();
+
+              // jeżeli którykolwiek z warunków nie jest spełniony - wyjdź z programu
+              if (x > y || x < 0 || y > 10_000) {
+                  return;
+              }
+
+              // najmniejsza liczba większa lub równa x i podzielna przez 7
+              int pierwszaLiczbaPodzielnaPrzezSiedem;
+              if (x % 7 == 0) {
+                  // liczbe jest podzielna przez 7, więc od niej zaczynamy
+                  pierwszaLiczbaPodzielnaPrzezSiedem = x;
+              } else {
+                  // musimy wziąć troszeczkę wiekśza liczbę niż x
+                  // więc do x dodajemy tyle, ile brakuje do podzielnej przez 7
+                  pierwszaLiczbaPodzielnaPrzezSiedem = x + (7 - x % 7);
+              }
+
+              // zaczynamy pętle od znalezionej przez nas liczby i zwiększamy ją o 7 za każdym razem
+              for (int i = pierwszaLiczbaPodzielnaPrzezSiedem; i <= y; i += 7) {
+                  System.out.println(i);
+              }
+
+              ////////////////////////////////////////////////
+              // Alternatywnie, inne dopuszczalne rozwiązanie:
+              if (x > y || x < 0 || y > 10_000) {
+                  return;
+              }
+              for (int i = x; i <= y; i++) {
+                  if (i % 7 == 0) {
+      //                System.out.println(i);
+                  }
+              }
+              // Jest to zdecydowanie gorsze i bardziej obciążające dla komputera rozwiązanie
+              // Wykonujemy około y-x obiegów pętli i sprawdzanie warunku (if) w każdym
+              // Tymczasem dla pierwszego rozwiązania - obiegów pętli jest około 7 razy mniej (bo i+= 7 zamiast i++) i nie ma instrukcji warunkowej
+    selected: false
+    status: Unchecked
+  text: |-
+    import java.util.Scanner;
+
+    public class Task {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            // your code
+        }
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |-
+    import org.junit.Test;
+
+    public class Tests extends BaseTest {
+
+        @Test
+        public void testSolution() {
+            runTest("-1\n120", "");
+        }
+
+        @Test
+        public void testSolution2() {
+            runTest("0\n10001", "");
+        }
+
+        @Test
+        public void testSolution3() {
+            runTest("14\n21", "14\n21");
+        }
+
+        @Test
+        public void testSolution4() {
+            runTest("14\n14", "14");
+        }
+
+        @Test
+        public void testSolution5() {
+            runTest("13\n34", "14\n21\n28");
+        }
+
+        @Test
+        public void testSolution6() {
+            runTest("14\n36", "14\n21\n28\n35");
+        }
+
+        @Test
+        public void testSolution7() {
+            runTest("32\n33", "");
+        }
+    }
+  learner_created: false
+- name: test/BaseTest.java
+  visible: false
+  text: |
+    import org.junit.After;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.PrintStream;
+    import java.util.function.Consumer;
+
+    import static org.junit.Assert.assertEquals;
+
+    public class BaseTest {
+
+        @After
+        public void restoreStreams() {
+            System.setOut(System.out);
+            System.setIn(System.in);
+        }
+
+        protected void runTest(String input, String expected) {
+            String actual = run(Task::main, input);
+
+            assertEquals("Zly wynik dla ponizszych danych: \n" + input + "\n", expected, actual);
+        }
+
+        private String run(Consumer<String[]> method, String input) {
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+            ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(outContent));
+
+            method.accept(new String[]{});
+            return outContent.toString().trim().replaceAll("\r\n", "\n");
+        }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

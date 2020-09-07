@@ -1,0 +1,109 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 151
+    length: 12
+    placeholder_text: // your code
+    initial_state:
+      length: 12
+      offset: 151
+    initialized_from_dependency: false
+    possible_answer: |-
+      String tekst = scanner.nextLine();
+              if (tekst.length() <= 3) {
+                  // jeżeli tekst jest krótki, zamieniamy na wielkie litery cały
+                  System.out.println(tekst.toUpperCase());
+              } else {
+                  String trzyOstatnieZnaki = tekst.substring(tekst.length() - 3);
+                  String pozostaleZnaki = tekst.substring(0, tekst.length() - 3);
+                  String nowyTekst = pozostaleZnaki + trzyOstatnieZnaki.toUpperCase();
+                  System.out.println(nowyTekst);
+              }
+    selected: false
+    status: Unchecked
+  text: |-
+    import java.util.Scanner;
+
+    public class Task {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            // your code
+        }
+    }
+  learner_created: false
+- name: test/BaseTest.java
+  visible: false
+  text: |
+    import org.junit.After;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.PrintStream;
+    import java.util.function.Consumer;
+
+    import static org.junit.Assert.assertEquals;
+
+    public class BaseTest {
+
+        @After
+        public void restoreStreams() {
+            System.setOut(System.out);
+            System.setIn(System.in);
+        }
+
+        protected void runTest(String input, String expected) {
+            String actual = run(Task::main, input);
+
+            assertEquals("Zly wynik dla ponizszych danych: \n" + input + "\n", expected, actual);
+        }
+
+        private String run(Consumer<String[]> method, String input) {
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+            ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(outContent));
+
+            method.accept(new String[]{});
+            return outContent.toString().trim();
+        }
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |-
+    import org.junit.Test;
+
+    public class Tests extends BaseTest {
+
+        @Test
+        public void testSolution() {
+            runTest("abc", "ABC");
+        }
+
+        @Test
+        public void testSolution2() {
+            runTest("abcd", "aBCD");
+        }
+
+        @Test
+        public void testSolution3() {
+            runTest("ok", "OK");
+        }
+
+        @Test
+        public void testSolution4() {
+            runTest("Ala ma kota", "Ala ma kOTA");
+        }
+
+        @Test
+        public void testSolution5() {
+            runTest("Czy Ala ma kota???", "Czy Ala ma kota???");
+        }
+
+    }
+  learner_created: false
+status: Unchecked
+record: -1

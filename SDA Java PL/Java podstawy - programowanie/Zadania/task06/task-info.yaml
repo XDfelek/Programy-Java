@@ -1,0 +1,83 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 65
+    length: 12
+    placeholder_text: // your code
+    initial_state:
+      length: 12
+      offset: 65
+    initialized_from_dependency: false
+    possible_answer: |2-
+              // Nic nie stoi na przeszkodzie, aby pętla for nie miała klasycznego "int i = 0"
+              // W tablicy ASCII widzimy, że kolejne litery alfabetu są w kolejności po sobie,
+              // zaczynając od 'A' o wartości 65, a kończąc na 'Z' o wartości 90.
+              // Tak naprawdę właśnie taka wartość liczbowa jest przechowywana w zmiennej i
+              // Możesz to podejrzeć używając debuggera
+              for (char i = 'A'; i <= 'Z'; i++) {
+                  System.out.println(i);
+              }
+    selected: false
+    status: Unchecked
+  text: |-
+    public class Task {
+        public static void main(String[] args) {
+    // your code
+        }
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |-
+    import org.junit.Test;
+
+    public class Tests extends BaseTest {
+
+        @Test
+        public void testSolution() {
+            runTest("", "A\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nQ\nR\nS\nT\nU\nV\nW\nX\nY\nZ");
+        }
+
+    }
+  learner_created: false
+- name: test/BaseTest.java
+  visible: false
+  text: |
+    import org.junit.After;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.PrintStream;
+    import java.util.function.Consumer;
+
+    import static org.junit.Assert.assertEquals;
+
+    public class BaseTest {
+
+        @After
+        public void restoreStreams() {
+            System.setOut(System.out);
+            System.setIn(System.in);
+        }
+
+        protected void runTest(String input, String expected) {
+            String actual = run(Task::main, input);
+
+            assertEquals("Zly wynik dla ponizszych danych: \n" + input + "\n", expected, actual);
+        }
+
+        private String run(Consumer<String[]> method, String input) {
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+            ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(outContent));
+
+            method.accept(new String[]{});
+            return outContent.toString().trim().replaceAll("\r\n", "\n");
+        }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

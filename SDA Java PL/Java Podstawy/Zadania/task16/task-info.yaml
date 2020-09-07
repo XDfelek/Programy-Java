@@ -1,0 +1,97 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 176
+    length: 524
+    placeholder_text: // Tu zaimplementuj rozwiązanie
+    initial_state:
+      length: 31
+      offset: 151
+    initialized_from_dependency: false
+    possible_answer: |-
+      String text = scanner.nextLine();
+
+              String reversed = new StringBuilder(text).reverse().toString();
+
+              System.out.println(reversed);
+    selected: true
+    status: Solved
+  text: |-
+    import java.util.Scanner;
+
+    public class Task {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            // Tu zaimplementuj rozwiązanie
+        }
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |-
+    import org.junit.After;
+    import org.junit.Before;
+    import org.junit.Test;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.InputStream;
+    import java.io.PrintStream;
+
+    import static org.junit.Assert.assertEquals;
+
+    public class Tests {
+
+        private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+        private final PrintStream originalOut = System.out;
+        private final PrintStream originalErr = System.err;
+        private final InputStream originalIn = System.in;
+
+        @Before
+        public void setUpStreams() {
+            System.setOut(new PrintStream(outContent));
+            System.setErr(new PrintStream(errContent));
+        }
+
+        @After
+        public void restoreStreams() {
+            System.setOut(originalOut);
+            System.setErr(originalErr);
+            System.setIn(originalIn);
+        }
+
+        @Test
+        public void testSolution() {
+            String inputText = "Kot";
+            System.setIn(new ByteArrayInputStream(inputText.getBytes()));
+
+            Task.main(new String[]{});
+
+            String expected = "toK";
+
+            assertEquals(String.format("Dla tekstu %s, program powinien wypisać w konsoli: %s.", inputText, expected), expected, outContent.toString().trim());
+        }
+
+        @Test
+        public void testSolution2() {
+            String inputText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+            System.setIn(new ByteArrayInputStream(inputText.getBytes()));
+
+            Task.main(new String[]{});
+
+            String expected = ".auqila angam erolod te erobal tu tnudidicni ropmet domsuie od des ,tile gnicsipida rutetcesnoc ,tema tis rolod muspi meroL";
+
+            assertEquals(String.format("Dla tekstu %s, program powinien wypisać w konsoli: %s.", inputText, expected), expected, outContent.toString().trim());
+        }
+
+    }
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sun, 06 Sep 2020 15:20:02 UTC
+record: -1

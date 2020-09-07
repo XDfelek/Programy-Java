@@ -1,0 +1,73 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 308
+    length: 31
+    placeholder_text: // Tu zaimplementuj rozwiązanie
+    initial_state:
+      length: 31
+      offset: 308
+    initialized_from_dependency: false
+    possible_answer: |-
+      DateTimeFormatter dateTimeFormatterA = DateTimeFormatter.ofPattern("yyyy::MM::dd");
+              DateTimeFormatter dateTimeFormatterB = DateTimeFormatter.ofPattern("MM--yyyy-d");
+              LocalDate localDateA = LocalDate.parse(dateA, dateTimeFormatterA);
+              LocalDate localDateB = LocalDate.parse(dateB, dateTimeFormatterB);
+
+              Period period = Period.between(localDateA, localDateB);
+
+              return new int[]{period.getYears(), period.getMonths(), period.getDays()};
+    selected: false
+    status: Unchecked
+  text: |-
+    import java.time.LocalDate;
+    import java.time.Period;
+    import java.time.format.DateTimeFormatter;
+
+    public class Task {
+        public static void main(String[] args) {
+            // możesz tutaj wywołać metodę w celu testowania
+        }
+
+        public static int[] calculateDifference(String dateA, String dateB) {
+            // Tu zaimplementuj rozwiązanie
+        }
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |-
+    import org.junit.Test;
+
+    import java.util.Arrays;
+
+    import static org.junit.Assert.assertArrayEquals;
+
+    public class Tests {
+        @Test
+        public void testSolution() {
+            String dateA = "2014::01::23";
+            String dateB = "03--2020-30";
+            int[] expected = new int[]{6, 2, 7};
+
+            int[] result = Task.calculateDifference(dateA, dateB);
+
+            assertArrayEquals(String.format("Dla dat %s oraz %s metoda powinna zwrócić tablicę: %s.", dateA, dateB, Arrays.toString(expected)), expected, result);
+        }
+
+        @Test
+        public void testSolution2() {
+            String dateA = "2013::06::01";
+            String dateB = "06--2120-01";
+            int[] expected = new int[]{107, 0, 0};
+
+            int[] result = Task.calculateDifference(dateA, dateB);
+
+            assertArrayEquals(String.format("Dla dat %s oraz %s metoda powinna zwrócić tablicę: %s.", dateA, dateB, Arrays.toString(expected)), expected, result);
+        }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

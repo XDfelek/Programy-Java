@@ -1,0 +1,148 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 199
+    length: 31
+    placeholder_text: // Tu zaimplementuj rozwiązanie
+    initial_state:
+      length: 31
+      offset: 199
+    initialized_from_dependency: false
+    possible_answer: |-
+      String text = scanner.nextLine();
+              String[] words = text.replaceAll("[^a-zA-Z ]", "").toLowerCase().split("\\s+");
+              Map<String, Integer> wordsOccurrences = new TreeMap<>();
+
+              for (String word : words) {
+                  Integer count = wordsOccurrences.get(word);
+                  if (count != null) {
+                      count++;
+                  } else {
+                      count = 1;
+                  }
+
+                  wordsOccurrences.put(word, count);
+              }
+
+              wordsOccurrences.forEach((key, val) -> System.out.println(key + " - " + val));
+    selected: false
+    status: Failed
+  text: |-
+    import java.util.Map;
+    import java.util.Scanner;
+    import java.util.TreeMap;
+
+    public class Task {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            // Tu zaimplementuj rozwiązanie
+        }
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |-
+    import org.junit.After;
+    import org.junit.Before;
+    import org.junit.Test;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.InputStream;
+    import java.io.PrintStream;
+
+    import static org.junit.Assert.assertEquals;
+
+    public class Tests {
+
+        private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+        private final PrintStream originalOut = System.out;
+        private final PrintStream originalErr = System.err;
+        private final InputStream originalIn = System.in;
+
+        @Before
+        public void setUpStreams() {
+            System.setOut(new PrintStream(outContent));
+            System.setErr(new PrintStream(errContent));
+        }
+
+        @After
+        public void restoreStreams() {
+            System.setOut(originalOut);
+            System.setErr(originalErr);
+            System.setIn(originalIn);
+        }
+
+        @Test
+        public void testSolution() {
+            String inputText = "Ala lubi koty, ale nie jest przez Koty lubiana.";
+            System.setIn(new ByteArrayInputStream(inputText.getBytes()));
+
+            Task.main(new String[]{});
+
+            String expected = "ala - 1\n" +
+                    "ale - 1\n" +
+                    "jest - 1\n" +
+                    "koty - 2\n" +
+                    "lubi - 1\n" +
+                    "lubiana - 1\n" +
+                    "nie - 1\n" +
+                    "przez - 1";
+
+            assertEquals(String.format("Dla tekstu %s, program powinien wypisać w konsoli: \n%s.", inputText, expected), expected, outContent.toString().trim().replaceAll("\r\n", "\n"));
+        }
+
+        @Test
+        public void testSolution2() {
+            String inputText = "Ala! lubi? koty, ale. nie jest przez Koty lubiana.";
+            System.setIn(new ByteArrayInputStream(inputText.getBytes()));
+
+            Task.main(new String[]{});
+
+            String expected = "ala - 1\n" +
+                    "ale - 1\n" +
+                    "jest - 1\n" +
+                    "koty - 2\n" +
+                    "lubi - 1\n" +
+                    "lubiana - 1\n" +
+                    "nie - 1\n" +
+                    "przez - 1";
+
+            assertEquals(String.format("Dla tekstu %s, program powinien wypisać w konsoli: \n%s.", inputText, expected), expected, outContent.toString().trim().replaceAll("\r\n", "\n"));
+        }
+
+        @Test
+        public void testSolution3() {
+            String inputText = "World. Hello, World!";
+            System.setIn(new ByteArrayInputStream(inputText.getBytes()));
+
+            Task.main(new String[]{});
+
+            String expected = "hello - 1\n" +
+                    "world - 2";
+
+            assertEquals(String.format("Dla tekstu %s, program powinien wypisać w konsoli: \n%s.", inputText, expected), expected, outContent.toString().trim().replaceAll("\r\n", "\n"));
+        }
+
+    }
+  learner_created: false
+status: Failed
+feedback:
+  message: "Dla tekstu Ala lubi koty, ale nie jest przez Koty lubiana., program powinien\
+    \ wypisaÄ‡ w konsoli: \nala - 1\nale - 1\njest - 1\nkoty - 2\nlubi - 1\nlubiana\
+    \ - 1\nnie - 1\nprzez - 1."
+  time: Sun, 06 Sep 2020 15:03:51 UTC
+  expected: |-
+    ala - 1
+    ale - 1
+    jest - 1
+    koty - 2
+    lubi - 1
+    lubiana - 1
+    nie - 1
+    przez - 1
+record: -1

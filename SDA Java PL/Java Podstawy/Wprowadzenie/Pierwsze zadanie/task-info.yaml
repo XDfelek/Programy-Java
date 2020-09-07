@@ -1,0 +1,71 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 72
+    length: 87
+    placeholder_text: '// Zapisz tutaj: System.out.println("Hello world");'
+    initial_state:
+      length: 51
+      offset: 73
+    initialized_from_dependency: false
+    possible_answer: System.out.println("Hello world");
+    selected: true
+    status: Solved
+  text: |-
+    public class Task {
+        public static void main(String[] args) {
+            // Zapisz tutaj: System.out.println("Hello world");
+        }
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |
+    import org.junit.After;
+    import org.junit.Before;
+    import org.junit.Test;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.InputStream;
+    import java.io.PrintStream;
+
+    import static org.junit.Assert.assertEquals;
+
+    public class Tests {
+
+        private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+        private final PrintStream originalOut = System.out;
+        private final PrintStream originalErr = System.err;
+        private final InputStream originalIn = System.in;
+
+        @Before
+        public void setUpStreams() {
+            System.setOut(new PrintStream(outContent));
+            System.setErr(new PrintStream(errContent));
+        }
+
+        @After
+        public void restoreStreams() {
+            System.setOut(originalOut);
+            System.setErr(originalErr);
+            System.setIn(originalIn);
+        }
+
+        @Test
+        public void testSolution() {
+            Task.main(new String[]{});
+
+            assertEquals("Wyświetl na ekranie tekst \"Hello world\"", "Hello world", outContent.toString().trim());
+        }
+
+    }
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 24 Aug 2020 13:42:41 UTC
+record: -1

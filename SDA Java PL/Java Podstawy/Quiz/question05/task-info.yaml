@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: byte x = 2.8f;
+  is_correct: false
+- text: float x = 2.8f;
+  is_correct: true
+- text: int x = 2.8f;
+  is_correct: false
+- text: x = 2.8f;
+  is_correct: false
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    public class Main {
+        public static void main(String[] args) {
+
+        }
+    }
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 24 Aug 2020 15:07:05 UTC
+record: -1
+selected_options:
+- 1

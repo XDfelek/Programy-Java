@@ -1,0 +1,1 @@
+Które z poniższych rzutowań nie powoduje utraty informacji?

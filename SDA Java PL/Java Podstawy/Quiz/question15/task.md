@@ -1,0 +1,1 @@
+Do czego służy enum w Javie?

@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: upperCase()
+  is_correct: false
+- text: toUpperLetters()
+  is_correct: false
+- text: upperLetters()
+  is_correct: false
+- text: toUpperCase()
+  is_correct: true
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    public class Main {
+        public static void main(String[] args) {
+
+        }
+    }
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 24 Aug 2020 15:08:00 UTC
+record: -1
+selected_options:
+- 3

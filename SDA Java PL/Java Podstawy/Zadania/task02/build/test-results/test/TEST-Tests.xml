@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Tests" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-09-04T10:45:25" hostname="DESKTOP-UI5KERO" time="0.032">
+  <properties/>
+  <testcase name="testSolution" classname="Tests" time="0.019"/>
+  <testcase name="testSolution2" classname="Tests" time="0.005"/>
+  <testcase name="testSolution3" classname="Tests" time="0.004"/>
+  <testcase name="testSolution4" classname="Tests" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Hello world
+  is_correct: true
+- text: Aloha!
+  is_correct: false
+- text: Hallo Welt!
+  is_correct: false
+- text: Dzień dobry
+  is_correct: false
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    public class Main {
+        public static void main(String[] args) {
+
+        }
+    }
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 24 Aug 2020 13:41:56 UTC
+record: -1
+selected_options:
+- 0

@@ -1,0 +1,120 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 307
+    length: 12
+    placeholder_text: // your code
+    initial_state:
+      length: 12
+      offset: 307
+    initialized_from_dependency: false
+    possible_answer: "    private static float calculateAverage(int... args) {\n \
+      \       int sum = 0;\n        for (int i : args) {\n            sum += i;\n\
+      \        }\n        \n        // koniecznie musimy rzutować zmienną sum na float,\
+      \ aby dokonać dzielenia \"z częścią ułamkową\".\n        // W przeciwnym wypadku\
+      \ - dostalibyśmy dzielenie dwóch zmiennych całkowitych (z \"obciętą resztą\"\
+      ).\n        return (float) sum / args.length;\n    }"
+    selected: false
+    status: Unchecked
+  text: |-
+    public class Task {
+
+        public static void main(String[] args) {
+            System.out.println(calculateAverage(1, 4, 2, 5, 6, 8, 11));
+            System.out.println(calculateAverage(1, 5, -11, 192));
+            System.out.println(calculateAverage(1));
+            System.out.println(calculateAverage(1, 1, 1));
+        }
+
+    // your code
+    }
+  learner_created: false
+- name: test/BaseTest.java
+  visible: false
+  text: |
+    import org.junit.After;
+    import org.junit.AfterClass;
+    import org.junit.BeforeClass;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.PrintStream;
+    import java.util.Arrays;
+    import java.util.List;
+    import java.util.Locale;
+    import java.util.function.Consumer;
+    import java.util.stream.Collectors;
+    import java.util.stream.Stream;
+
+    import static org.junit.Assert.assertEquals;
+
+    public class BaseTest {
+
+        private static Locale systemLocale;
+        private static final float FLOAT_TESTS_DELTA = 0.1f;
+
+        @BeforeClass
+        public static void beforeClass() {
+            systemLocale = Locale.getDefault();
+            Locale.setDefault(new Locale("en-US"));
+        }
+
+        @AfterClass
+        public static void afterClass() {
+            Locale.setDefault(systemLocale);
+        }
+
+        @After
+        public void restoreStreams() {
+            System.setOut(System.out);
+            System.setIn(System.in);
+        }
+
+        protected void runTestForFloats(String input, float... expected) {
+            List<Float> actual = runForFloats(Task::main, input);
+
+            for (int i = 0; i < expected.length; i++) {
+                assertEquals(expected[i], actual.get(i), FLOAT_TESTS_DELTA);
+            }
+        }
+
+        private String run(Consumer<String[]> method, String input) {
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+            ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(outContent));
+
+            method.accept(new String[]{});
+            return outContent.toString().trim();
+        }
+
+        private List<Float> runForFloats(Consumer<String[]> method, String input) {
+            String output = run(method, input);
+            return Arrays
+                    .stream(output.split("\n"))
+                    .map(s -> s.split(" "))
+                    .flatMap(Stream::of)
+                    .map(f -> Float.parseFloat(f))
+                    .collect(Collectors.toList());
+        }
+
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |-
+    import org.junit.Test;
+
+    public class Tests extends BaseTest {
+
+        @Test
+        public void testSolution() {
+            runTestForFloats("", 5.285714f, 46.75f, 1.0f, 1.0f);
+        }
+
+    }
+  learner_created: false
+status: Unchecked
+record: -1

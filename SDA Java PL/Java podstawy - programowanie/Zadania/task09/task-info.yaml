@@ -1,0 +1,110 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 151
+    length: 12
+    placeholder_text: // your code
+    initial_state:
+      length: 12
+      offset: 151
+    initialized_from_dependency: false
+    possible_answer: |-
+      int n = scanner.nextInt();
+
+              for (int i = 0; i < n; i++) {
+                  for (int j = 0; j < n - i - 1; j++) {
+                      // drukowanie odstępu dla linii i
+                      System.out.print(" ");
+                  }
+                  for (int j = 0; j < 2 * i + 1; j++) {
+                      // drukowanie choinki dla linii i
+                      System.out.print("*");
+                  }
+                  System.out.println(); // wstawienie nowej linii
+              }
+
+              // nóżka choinki
+              for (int j = 0; j < n - 1; j++) {
+                  System.out.print(" ");
+              }
+              System.out.println("#");
+    selected: false
+    status: Unchecked
+  text: |-
+    import java.util.Scanner;
+
+    public class Task {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            // your code
+        }
+    }
+  learner_created: false
+- name: test/BaseTest.java
+  visible: false
+  text: |
+    import org.junit.After;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.PrintStream;
+    import java.util.function.Consumer;
+
+    import static org.junit.Assert.assertEquals;
+
+    public class BaseTest {
+
+        @After
+        public void restoreStreams() {
+            System.setOut(System.out);
+            System.setIn(System.in);
+        }
+
+        protected void runTest(String input, String expected) {
+            String actual = run(Task::main, input);
+
+            assertEquals("Zly wynik dla ponizszych danych: \n" + input + "\n", expected, actual);
+        }
+
+        private String run(Consumer<String[]> method, String input) {
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+            ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(outContent));
+
+            method.accept(new String[]{});
+            return outContent.toString()
+                    .replaceAll("\\s+$", "")            // drop trailing (trim, but only from end)
+                    .replaceAll("\r\n", "\n");
+        }
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |-
+    import org.junit.Test;
+
+    public class Tests extends BaseTest {
+
+        @Test
+        public void testSolution() {
+            runTest("1", "*\n#");
+        }
+
+        @Test
+        public void testSolution2() {
+            runTest("3", "  *\n ***\n*****\n  #");
+        }
+
+        @Test
+        public void testSolution3() {
+            runTest("4", "   *\n  ***\n *****\n*******\n   #");
+        }
+
+    }
+  learner_created: false
+status: Unchecked
+record: -1

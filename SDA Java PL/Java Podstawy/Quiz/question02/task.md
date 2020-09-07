@@ -1,0 +1,1 @@
+Jak w Javie wstawić komentarz w kodzie?

@@ -1,0 +1,89 @@
+type: edu
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 281
+    length: 31
+    placeholder_text: // Tu zaimplementuj rozwiązanie
+    initial_state:
+      length: 31
+      offset: 281
+    initialized_from_dependency: false
+    possible_answer: |-
+      DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
+              return LocalDate.parse(input, dateTimeFormatter);
+    selected: false
+    status: Unchecked
+  text: |-
+    import java.time.LocalDate;
+    import java.time.format.DateTimeFormatter;
+
+    public class Task {
+        public static void main(String[] args) {
+            // możesz tutaj wywołać metodę w celu testowania
+        }
+
+        public static LocalDate toLocalDate(String pattern, String input) {
+            // Tu zaimplementuj rozwiązanie
+        }
+    }
+  learner_created: false
+- name: test/Tests.java
+  visible: false
+  text: |-
+    import org.junit.Test;
+
+    import java.time.LocalDate;
+    import java.time.format.DateTimeFormatter;
+
+    import static org.junit.Assert.assertEquals;
+
+    public class Tests {
+        @Test
+        public void testSolution() {
+            String pattern = "dd-MM-yyyy";
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
+            LocalDate date = LocalDate.of(2020, 3, 5);
+
+            LocalDate result = Task.toLocalDate(pattern, date.format(dateTimeFormatter));
+
+            assertEquals(String.format("Dla formatu %s oraz daty %s metoda powinna zwrócić poprawny obiekt.", pattern, date.format(dateTimeFormatter)), date, result);
+        }
+
+        @Test
+        public void testSolution2() {
+            String pattern = "MM-dd-yyyy";
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
+            LocalDate date = LocalDate.of(2021, 7, 5);
+
+            LocalDate result = Task.toLocalDate(pattern, date.format(dateTimeFormatter));
+
+            assertEquals(String.format("Dla formatu %s oraz daty %s metoda powinna zwrócić poprawny obiekt.", pattern, date.format(dateTimeFormatter)), date, result);
+        }
+
+        @Test
+        public void testSolution3() {
+            String pattern = "yyyy-MM-dd";
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
+            LocalDate date = LocalDate.of(2022, 3, 7);
+
+            LocalDate result = Task.toLocalDate(pattern, date.format(dateTimeFormatter));
+
+            assertEquals(String.format("Dla formatu %s oraz daty %s metoda powinna zwrócić poprawny obiekt.", pattern, date.format(dateTimeFormatter)), date, result);
+        }
+
+        @Test
+        public void testSolution4() {
+            String pattern = "yyyy::dd::MM";
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
+            LocalDate date = LocalDate.of(1980, 12, 9);
+
+            LocalDate result = Task.toLocalDate(pattern, date.format(dateTimeFormatter));
+
+            assertEquals(String.format("Dla formatu %s oraz daty %s metoda powinna zwrócić poprawny obiekt.", pattern, date.format(dateTimeFormatter)), date, result);
+        }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
