@@ -33,6 +33,6 @@ public class BigDecimalDemo {
         BigDecimal substract = threePointTwo.subtract(twoDotZero);
         System.out.println("substract = " + substract);
 
-        BigDecimal bigDecimal9 = new BigDecimal();
+        //BigDecimal bigDecimal9 = new BigDecimal();
     }
 }
