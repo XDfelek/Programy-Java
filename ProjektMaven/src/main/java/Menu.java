@@ -5,6 +5,7 @@ public class Menu {
 
     public void showMainMenu() {
         for (int loopMainMenu = 0; loopMainMenu == loopMainMenu; loopMainMenu++) {
+            System.out.println();
             System.out.println("Welcome to car rental");
             System.out.println("\t 1. List available cars");
             System.out.println("\t 2. Edit rental price");
@@ -105,6 +106,23 @@ public class Menu {
     }
 
     public void showMenuListAvailableCars() {
+
+        CarsStorage carsStorage = new CarsStorage();
+
+        carsStorage.getCarsStorageString();
+        System.out.println("Do you want to go back to main menu?");
+        System.out.println("1. yes");
+        System.out.println("2. no");
+        System.out.print("Choose your option: ");
+        Scanner scanner = new Scanner(System.in);
+        int chosenIntShowMenuListAvailableCars = scanner.nextInt();
+        if (chosenIntShowMenuListAvailableCars == 1){
+            Menu menu = new Menu();
+            menu.showMainMenu();
+            menu.showMenuSwitcher(menu);
+        }
+
+
 
     }
 
