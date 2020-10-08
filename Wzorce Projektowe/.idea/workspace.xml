@@ -3,12 +3,54 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="68bd115b-c743-4794-a965-bd80356b1a01" name="Default Changelist" comment="" />
+    <list default="true" id="68bd115b-c743-4794-a965-bd80356b1a01" name="Default Changelist" comment="Wzorce Projektowe">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/builder/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/builder/CarBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/builder/CarBuilderImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/builder/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/builder/Car$History.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/builder/Car.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/builder/CarBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/builder/CarBuilderImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/builder/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -18,11 +60,40 @@
     </option>
   </component>
   <component name="ProjectId" id="1ibZ7pyPxzlN3nFA2UPKFkc3AmW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="builder.Main" />
+      <module name="Wzorce Projektowe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="builder.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -33,6 +104,51 @@
       <option name="presentableId" value="Default" />
       <updated>1602178089108</updated>
     </task>
+    <task id="LOCAL-00001" summary="Wzorce Projektowe">
+      <created>1602178136818</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602178136818</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Wzorce Projektowe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wzorce Projektowe" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="471" y="114" key="#Project_Structure" timestamp="1602178341975">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="471" y="114" key="#Project_Structure/-1870.0.1486.864/62.0.1858.1080/1920.-243.900.1410@62.0.1858.1080" timestamp="1602178341975" />
+    <state x="796" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1602182479723">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="796" y="224" key="#com.intellij.ide.util.MemberChooser/-1870.0.1486.864/62.0.1858.1080/1920.-243.900.1410@62.0.1858.1080" timestamp="1602182479723" />
+    <state x="708" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602182067372">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="708" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1870.0.1486.864/62.0.1858.1080/1920.-243.900.1410@62.0.1858.1080" timestamp="1602182067372" />
+    <state x="771" y="295" key="FileChooserDialogImpl" timestamp="1602181600575">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="771" y="295" key="FileChooserDialogImpl/-1870.0.1486.864/62.0.1858.1080/1920.-243.900.1410@62.0.1858.1080" timestamp="1602181600575" />
+    <state x="492" y="185" key="SettingsEditor" timestamp="1602181827505">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="492" y="185" key="SettingsEditor/-1870.0.1486.864/62.0.1858.1080/1920.-243.900.1410@62.0.1858.1080" timestamp="1602181827505" />
   </component>
 </project>
